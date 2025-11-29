@@ -1,28 +1,33 @@
 {
   "name": "web",
-  "version": "0.1.0",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev --port 3000",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint --max-warnings 0",
-    "check-types": "next typegen && tsc --noEmit"
+    "build": "react-router build",
+    "cf-typegen": "wrangler types",
+    "deploy": "pnpm run build && wrangler deploy",
+    "dev": "react-router dev",
+    "postinstall": "npm run cf-typegen",
+    "preview": "pnpm run build && vite preview",
+    "typecheck": "react-router typegen && tsc -b"
   },
   "dependencies": {
-    "@repo/ui": "workspace:*",
-    "next": "^16.0.1",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "isbot": "^5.1.31",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router": "^7.9.2"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "@types/node": "^22.15.3",
-    "@types/react": "19.2.2",
-    "@types/react-dom": "19.2.2",
-    "eslint": "^9.39.1",
-    "typescript": "5.9.2"
+    "@cloudflare/vite-plugin": "^1.13.5",
+    "@react-router/dev": "^7.9.2",
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/node": "^22",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7",
+    "vite-tsconfig-paths": "^5.1.4",
+    "wrangler": "^4.51.0"
   }
 }
