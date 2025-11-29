@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "@react-router/cloudflare": "^7.9.6",
+    "@react-router/cloudflare": "^7.9.2",
     "typescript": "^5.9.3"
   },
   "files": [

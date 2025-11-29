@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@react-router/cloudflare": "^7.9.6"
+    "@react-router/cloudflare": "^7.9.2"
   },
   "devDependencies": {
     "@bug-repro/typescript-config": "workspace:*",
