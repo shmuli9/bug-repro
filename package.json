@@ -1,5 +1,5 @@
 {
-  "name": "bug-repro",
+  "name": "@bug-repro/root",
   "private": true,
   "scripts": {
     "build": "turbo run build",

@@ -1,17 +1,36 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.node.json" },
-    { "path": "./tsconfig.cloudflare.json" }
+  "include": [
+    ".react-router/types/**/*",
+    "app/**/*",
+    "workers/**/*",
+    "load-context.ts",
+    "react-router.config.ts",
+    "drizzle.config.ts",
+    "db/**/*"
   ],
+  "exclude": ["node_modules", "build", "dist", "coverage"],
+  "types": [],
   "compilerOptions": {
     "checkJs": true,
     "verbatimModuleSyntax": true,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
-    "types": [
-        "./worker-configuration.d.ts"
-    ]
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "types": ["node", "vite/client", "@bug-repro/types/env"],
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "baseUrl": ".",
+    "rootDirs": [".", "./.react-router/types"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "tsBuildInfoFile": ".tsc/.cloudflare.tsbuildinfo",
+    "paths": {
+      "@/*": ["./app/@/*"],
+      "~/*": ["./app/*"]
+    }
   }
 }
